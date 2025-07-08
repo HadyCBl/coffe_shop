@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÉLITE CAFÉ - Experiencia Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Diseño de café espectacular completamente nuevo */
+        .elite-coffee-display {
+            position: relative;
+            width: 350px;
+            height: 400px;
+            margin: 0 auto;
+            perspective: 1000px;
+            filter: drop-shadow(0 30px 80px rgba(212, 175, 55, 0.4));
+        }
+
+        /* Taza de café de cristal elegante */
+        .glass-cup {
+            position: relative;
+            width: 260px;
+            height: 320px;
+            background: linear-gradient(145deg, 
+                rgba(255,255,255,0.1) 0%,
+                rgba(255,255,255,0.05) 30%,
+                rgba(255,255,255,0.02) 60%,
+                rgba(0,0,0,0.1) 100%);
+            border-radius: 15px 15px 50px 50px;
+            border: 2px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                inset 0 0 30px rgba(255,255,255,0.1),
+                0 20px 60px rgba(0,0,0,0.5),
+                0 0 0 1px rgba(212, 175, 55, 0.3);
+            animation: glass-shimmer 6s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        /* Efecto de cristal brillante */
+        .glass-reflection {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            width: 60px;
+            height: 200px;
+            background: linear-gradient(135deg, 
+                rgba(255,255,255,0.4) 0%,
+                transparent 50%);
+            border-radius: 30px;
+            filter: blur(2px);
+            animation: reflection-move 8s ease-in-out infinite;
+        }
+
+        /* Café líquido realista */
+        .coffee-liquid {
+            position: absolute;
+            bottom: 25px;
+            left: 15px;
+            width: 230px;
+            height: 240px;
+            background: 
+                radial-gradient(ellipse at 30% 20%, #8B4513 0%, #654321 40%),
+                linear-gradient(180deg, 
+                    #5D2F2A 0%,
+                    #4A2420 20%,
+                    #3E1F1C 40%,
+                    #2F1815 60%,
+                    #1F100E 80%,
+                    #0F0807 100%);
+            border-radius: 10px 10px 45px 45px;
+            overflow: hidden;
+            animation: liquid-sway 7s ease-in-out infinite;
+            box-shadow: 
+                inset 0 0 40px rgba(0,0,0,0.8),
+                inset 0 -10px 30px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Superficie del café con crema */
+        .coffee-crema {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(180deg,
+                rgba(205, 133, 63, 0.9) 0%,
+                rgba(160, 82, 45, 0.7) 30%,
+                rgba(139, 69, 19, 0.5) 60%,
+                rgba(101, 67, 33, 0.3) 100%);
+            border-radius: 10px;
+            animation: crema-bubble 5s ease-in-out infinite;
+        }
+
+        /* Ondas en la superficie */
+        .surface-ripple {
+            position: absolute;
+            top: 5px;
+            left: 20%;
+            width: 60%;
+            height: 20px;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: ripple-effect 4s ease-in-out infinite;
+        }
+
+        /* Asa moderna y elegante */
+        .modern-handle {
+            position: absolute;
+            right: -25px;
+            top: 80px;
+            width: 45px;
+            height: 120px;
+            border: 8px solid rgba(255,255,255,0.15);
+            border-left: none;
+            border-radius: 0 25px 25px 0;
+            backdrop-filter: blur(5px);
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.3),
+                inset 0 0 20px rgba(255,255,255,0.1);
+            animation: handle-float 6s ease-in-out infinite;
+        }
+
+        /* Vapor artístico mejorado */
+        .artistic-steam {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 150px;
+            pointer-events: none;
+        }
+
+        .steam-spiral {
+            position: absolute;
+            width: 8px;
+            height: 60px;
+            background: linear-gradient(to top,
+                rgba(255,255,255,0.8) 0%,
+                rgba(255,255,255,0.4) 50%,
+                transparent 100%);
+            border-radius: 50%;
+            filter: blur(1.5px);
+            animation: spiral-steam 5s ease-out infinite;
+        }
+
+        .steam-spiral:nth-child(1) {
+            left: 30%;
+            animation-delay: 0s;
+            height: 70px;
+        }
+
+        .steam-spiral:nth-child(2) {
+            left: 45%;
+            animation-delay: 1s;
+            height: 55px;
+        }
+
+        .steam-spiral:nth-child(3) {
+            left: 60%;
+            animation-delay: 2s;
+            height: 65px;
+        }
+
+        .steam-spiral:nth-child(4) {
+            left: 38%;
+            animation-delay: 3s;
+            height: 50px;
+        }
+
+        .steam-spiral:nth-child(5) {
+            left: 52%;
+            animation-delay: 4s;
+            height: 60px;
+        }
+
+        /* Base elegante */
+        .elegant-base {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 25px;
+            background: linear-gradient(145deg,
+                rgba(212, 175, 55, 0.3) 0%,
+                rgba(255, 215, 0, 0.2) 50%,
+                rgba(212, 175, 55, 0.3) 100%);
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 10px 40px rgba(212, 175, 55, 0.2),
+                inset 0 -5px 15px rgba(0,0,0,0.2);
+            animation: base-glow 8s ease-in-out infinite;
+        }
+
+        /* Partículas de aroma */
+        .aroma-particles {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            pointer-events: none;
+        }
+
+        .aroma-dot {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.8), transparent);
+            border-radius: 50%;
+            animation: aroma-float 6s ease-in-out infinite;
+        }
+
+        /* Animaciones espectaculares */
+        @keyframes glass-shimmer {
+            0%, 100% {
+                box-shadow: 
+                    inset 0 0 30px rgba(255,255,255,0.1),
+                    0 20px 60px rgba(0,0,0,0.5),
+                    0 0 0 1px rgba(212, 175, 55, 0.3);
+            }
+            50% {
+                box-shadow: 
+                    inset 0 0 30px rgba(255,255,255,0.2),
+                    0 20px 60px rgba(0,0,0,0.5),
+                    0 0 0 1px rgba(212, 175, 55, 0.5),
+                    0 0 30px rgba(212, 175, 55, 0.3);
+            }
+        }
+
+        @keyframes reflection-move {
+            0%, 100% {
+                transform: translateX(0) rotate(15deg);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateX(10px) rotate(20deg);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes liquid-sway {
+            0%, 100% {
+                transform: rotate(0deg) scale(1);
+            }
+            25% {
+                transform: rotate(0.5deg) scale(1.01);
+            }
+            75% {
+                transform: rotate(-0.5deg) scale(1.01);
+            }
+        }
+
+        @keyframes crema-bubble {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        @keyframes ripple-effect {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes handle-float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes spiral-steam {
+            0% {
+                opacity: 0.8;
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+            25% {
+                opacity: 0.6;
+                transform: translateY(-25px) scale(1.2) rotate(90deg);
+            }
+            50% {
+                opacity: 0.4;
+                transform: translateY(-50px) scale(1.5) rotate(180deg);
+            }
+            75% {
+                opacity: 0.2;
+                transform: translateY(-75px) scale(2) rotate(270deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(2.5) rotate(360deg);
+            }
+        }
+
+        @keyframes base-glow {
+            0%, 100% {
+                box-shadow: 
+                    0 10px 40px rgba(212, 175, 55, 0.2),
+                    inset 0 -5px 15px rgba(0,0,0,0.2);
+            }
+            50% {
+                box-shadow: 
+                    0 10px 40px rgba(212, 175, 55, 0.4),
+                    inset 0 -5px 15px rgba(0,0,0,0.2),
+                    0 0 20px rgba(212, 175, 55, 0.3);
+            }
+        }
+
+        @keyframes aroma-float {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.5);
+            }
+            20% {
+                opacity: 0.8;
+                transform: translateY(-20px) scale(1);
+            }
+            80% {
+                opacity: 0.8;
+                transform: translateY(-60px) scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-80px) scale(0.8);
+            }
+        }
+
+        /* Animaciones mejoradas */
+        @keyframes steam-flow {
+            0% {
+                opacity: 0.9;
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+            25% {
+                opacity: 0.7;
+                transform: translateY(-20px) scale(1.1) rotate(3deg);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(-45px) scale(1.3) rotate(-2deg);
+            }
+            75% {
+                opacity: 0.3;
+                transform: translateY(-70px) scale(1.5) rotate(4deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(2) rotate(-3deg);
+            }
+        }
+
+        @keyframes coffee-surface-move {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+            25% {
+                transform: scale(1.01) rotate(0.5deg);
+            }
+            50% {
+                transform: scale(1.02) rotate(0deg);
+            }
+            75% {
+                transform: scale(1.01) rotate(-0.5deg);
+            }
+        }
+
+        @keyframes foam-dance {
+            0%, 100% {
+                opacity: 0.8;
+                transform: scale(1) rotate(0deg);
+            }
+            33% {
+                opacity: 0.9;
+                transform: scale(1.03) rotate(1deg);
+            }
+            66% {
+                opacity: 0.85;
+                transform: scale(1.06) rotate(-1deg);
+            }
+        }
+
+        @keyframes cup-sway {
+            0%, 100% {
+                transform: translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateX(2px) rotate(0.5deg);
+            }
+            50% {
+                transform: translateX(0) rotate(0deg);
+            }
+            75% {
+                transform: translateX(-2px) rotate(-0.5deg);
+            }
+        }
+
+        @keyframes handle-glow {
+            0%, 100% {
+                box-shadow: 
+                    inset -8px 0 16px rgba(0,0,0,0.4),
+                    8px 8px 20px rgba(0,0,0,0.3),
+                    0 0 0 1px rgba(139, 69, 19, 0.2);
+            }
+            50% {
+                box-shadow: 
+                    inset -8px 0 16px rgba(0,0,0,0.4),
+                    8px 8px 20px rgba(0,0,0,0.3),
+                    0 0 0 1px rgba(139, 69, 19, 0.2),
+                    0 0 20px rgba(212, 175, 55, 0.3);
+            }
+        }
+
+        @keyframes saucer-float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        @keyframes coffee-highlight {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes foam-shimmer {
+            0%, 100% {
+                opacity: 0.6;
+                transform: translateX(0);
+            }
+            50% {
+                opacity: 0.9;
+                transform: translateX(5px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .floating {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        /* Efectos de imagen */
+        .coffee-image {
+            transition: all 0.3s ease;
+            filter: brightness(0.8) contrast(1.2) saturate(1.1);
+        }
+
+        .coffee-image:hover {
+            filter: brightness(1) contrast(1.3) saturate(1.2);
+            transform: scale(1.05);
+        }
+
+        /* Gradientes y efectos */
+        .bg-coffee-gradient {
+            background: linear-gradient(135deg, 
+                #000000 0%, 
+                #1a0f0a 15%, 
+                #2d1810 30%, 
+                #1a0f0a 45%, 
+                #000000 60%, 
+                #1a0f0a 75%, 
+                #2d1810 90%, 
+                #000000 100%);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .text-coffee-gold {
+            background: linear-gradient(45deg, #D4AF37, #FFD700, #B8860B, #DAA520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gold-shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes gold-shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 
+                0 25px 50px rgba(212, 175, 55, 0.3),
+                0 0 0 1px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Responsividad para el nuevo diseño */
+        @media (max-width: 768px) {
+            .elite-coffee-display {
+                width: 280px;
+                height: 320px;
+            }
+            
+            .glass-cup {
+                width: 200px;
+                height: 250px;
+            }
+            
+            .coffee-liquid {
+                width: 170px;
+                height: 180px;
+                left: 15px;
+                bottom: 20px;
+            }
+            
+            .modern-handle {
+                right: -20px;
+                top: 60px;
+                width: 35px;
+                height: 90px;
+            }
+            
+            .artistic-steam {
+                width: 150px;
+                height: 120px;
+                top: -80px;
+            }
+            
+            .elegant-base {
+                width: 240px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .elite-coffee-display {
+                width: 220px;
+                height: 280px;
+            }
+            
+            .glass-cup {
+                width: 160px;
+                height: 200px;
+            }
+            
+            .coffee-liquid {
+                width: 130px;
+                height: 140px;
+                left: 15px;
+                bottom: 15px;
+            }
+            
+            .modern-handle {
+                right: -15px;
+                top: 50px;
+                width: 30px;
+                height: 70px;
+            }
+            
+            .artistic-steam {
+                width: 120px;
+                height: 100px;
+                top: -70px;
+            }
+            
+            .elegant-base {
+                width: 200px;
+                height: 18px;
+            }
+        }
+
+        /* Efectos de partículas mejorados */
+        .bean {
+            position: absolute;
+            width: 10px;
+            height: 15px;
+            background: linear-gradient(45deg, #3E2723, #4A2C2A, #2E1A16);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            opacity: 0.7;
+            animation: enhanced-fall 10s linear infinite;
+            box-shadow: 0 0 5px rgba(62, 39, 35, 0.5);
+        }
+
+        .bean::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 2px;
+            height: 8px;
+            background: #2E1A16;
+            border-radius: 50%;
+        }
+
+        @keyframes enhanced-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Overlay para imágenes */
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(139, 69, 19, 0.2));
+            transition: all 0.3s ease;
+        }
+
+        .image-overlay:hover {
+            background: linear-gradient(45deg, rgba(0,0,0,0.1), rgba(139, 69, 19, 0.1));
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    <!-- Partículas de granos de café -->
+    <div class="coffee-beans fixed inset-0 pointer-events-none z-0" id="coffeeBeansContainer"></div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-coffee-gradient">
+        <div class="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-transparent to-orange-900/20"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
+            <!-- Diseño de café espectacular completamente nuevo -->
+            <div class="elite-coffee-display floating mb-8 md:mb-12">
+                <!-- Taza de cristal elegante -->
+                <div class="glass-cup">
+                    <!-- Reflejo del cristal -->
+                    <div class="glass-reflection"></div>
+                    
+                    <!-- Café líquido -->
+                    <div class="coffee-liquid">
+                        <!-- Crema superior -->
+                        <div class="coffee-crema"></div>
+                        <!-- Ondas en la superficie -->
+                        <div class="surface-ripple"></div>
+                    </div>
+                    
+                    <!-- Asa moderna -->
+                    <div class="modern-handle"></div>
+                </div>
+                
+                <!-- Vapor artístico -->
+                <div class="artistic-steam">
+                    <div class="steam-spiral"></div>
+                    <div class="steam-spiral"></div>
+                    <div class="steam-spiral"></div>
+                    <div class="steam-spiral"></div>
+                    <div class="steam-spiral"></div>
+                </div>
+                
+                <!-- Base elegante -->
+                <div class="elegant-base"></div>
+                
+                <!-- Partículas de aroma -->
+                <div class="aroma-particles" id="aromaContainer">
+                    <!-- Las partículas se generarán dinámicamente -->
+                </div>
+            </div>
+
+            <h1 class="font-display text-4xl md:text-6xl lg:text-8xl font-bold mb-6 text-coffee-gold">
+                ÉLITE CAFÉ
+            </h1>
+            
+            <p class="text-lg md:text-xl lg:text-2xl text-amber-200/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Donde cada sorbo es una obra maestra de sabor y aroma
+            </p>
+            
+            <button onclick="scrollToSection('menu')" class="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-coffee mr-2"></i>
+                Explorar Menú
+            </button>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-amber-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Menú Section -->
+    <section id="menu" class="py-20 px-4 md:px-8 bg-gradient-to-b from-black to-stone-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-coffee-gold">Menú Exclusivo</h2>
+                <p class="text-amber-200/70 text-base md:text-lg">Selecciones premium de granos de origen único</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="menuGrid">
+                <!-- Los items del menú se generarán con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Cafés -->
+    <section id="gallery" class="py-20 px-4 md:px-8 bg-gradient-to-b from-stone-900 to-black">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-coffee-gold">Nuestra Pasión</h2>
+                <p class="text-amber-200/70 text-base md:text-lg">Cada taza cuenta una historia única</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="galleryGrid">
+                <!-- Las imágenes se generarán con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Métodos de Extracción -->
+    <section id="extraction" class="py-20 px-4 md:px-8 bg-gradient-to-b from-black to-stone-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-coffee-gold">Métodos de Extracción</h2>
+                <p class="text-amber-200/70 text-base md:text-lg">Técnicas artesanales para la perfección</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="extractionGrid">
+                <!-- Los métodos se generarán con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservaciones -->
+    <section id="reservations" class="py-20 px-4 md:px-8 bg-gradient-to-b from-stone-900 to-black">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-coffee-gold">Reservaciones</h2>
+            <p class="text-amber-200/70 mb-12 text-base md:text-lg">Asegura tu experiencia en nuestro santuario del café</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+                <div class="text-center card-hover p-6 rounded-lg bg-gradient-to-b from-amber-900/20 to-stone-900/50 border border-amber-600/30">
+                    <i class="fas fa-map-marker-alt text-3xl md:text-4xl text-amber-400 mb-4"></i>
+                    <h3 class="text-lg md:text-xl font-semibold text-amber-300 mb-2">Ubicación</h3>
+                    <p class="text-stone-300 text-sm md:text-base">
+                        Av. Reforma <br>
+                        Zona Centro, Ciudad de Guatemala<br>
+                    </p>
+                </div>
+
+                <div class="text-center card-hover p-6 rounded-lg bg-gradient-to-b from-amber-900/20 to-stone-900/50 border border-amber-600/30">
+                    <i class="fas fa-clock text-3xl md:text-4xl text-amber-400 mb-4"></i>
+                    <h3 class="text-lg md:text-xl font-semibold text-amber-300 mb-2">Horarios</h3>
+                    <p class="text-stone-300 text-sm md:text-base">
+                        Lun - Dom<br>
+                        <span id="currentTime">7:00 AM - 11:00 PM</span>
+                    </p>
+                </div>
+
+                <div class="text-center card-hover p-6 rounded-lg bg-gradient-to-b from-amber-900/20 to-stone-900/50 border border-amber-600/30 sm:col-span-2 lg:col-span-1">
+                    <i class="fas fa-phone text-3xl md:text-4xl text-amber-400 mb-4"></i>
+                    <h3 class="text-lg md:text-xl font-semibold text-amber-300 mb-2">Contacto</h3>
+                    <p class="text-stone-300 text-sm md:text-base">
+                        +50 55 1234 5678<br>
+                        reservas@elitecafe.com
+                    </p>
+                </div>
+            </div>
+
+            <button onclick="openReservationModal()" class="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 md:px-12 py-3 md:py-4 text-lg md:text-xl rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-calendar-plus mr-2"></i>
+                Reservar Mesa
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 md:px-8 bg-black border-t border-amber-700/30">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="font-display text-xl md:text-2xl font-bold text-coffee-gold mb-4">ÉLITE CAFÉ</h3>
+            <p class="text-stone-400 mb-6 text-sm md:text-base">Donde cada taza cuenta una historia de excelencia</p>
+            <div class="flex justify-center space-x-2 mb-4">
+                <i class="fas fa-star text-amber-400"></i>
+                <i class="fas fa-star text-amber-400"></i>
+                <i class="fas fa-star text-amber-400"></i>
+                <i class="fas fa-star text-amber-400"></i>
+                <i class="fas fa-star text-amber-400"></i>
+            </div>
+            <p class="text-stone-500 text-xs md:text-sm">© 2024 Wavdev. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Reservación -->
+    <div id="reservationModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-gradient-to-b from-stone-800 to-stone-900 p-6 md:p-8 rounded-lg max-w-md w-full border border-amber-600/30">
+            <div class="text-center mb-6">
+                <i class="fas fa-coffee text-3xl md:text-4xl text-amber-400 mb-4"></i>
+                <h3 class="text-xl md:text-2xl font-bold text-amber-300">Reservar Mesa</h3>
+            </div>
+            
+            <form id="reservationForm" class="space-y-4">
+                <div>
+                    <label class="block text-amber-200 mb-2 text-sm md:text-base">Nombre</label>
+                    <input type="text" required class="w-full p-3 bg-stone-700 border border-amber-600/30 rounded-lg text-white focus:border-amber-400 focus:outline-none text-sm md:text-base">
+                </div>
+                
+                <div>
+                    <label class="block text-amber-200 mb-2 text-sm md:text-base">Teléfono</label>
+                    <input type="tel" required class="w-full p-3 bg-stone-700 border border-amber-600/30 rounded-lg text-white focus:border-amber-400 focus:outline-none text-sm md:text-base">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-amber-200 mb-2 text-sm md:text-base">Fecha</label>
+                        <input type="date" required class="w-full p-3 bg-stone-700 border border-amber-600/30 rounded-lg text-white focus:border-amber-400 focus:outline-none text-sm md:text-base">
+                    </div>
+                    <div>
+                        <label class="block text-amber-200 mb-2 text-sm md:text-base">Hora</label>
+                        <input type="time" required class="w-full p-3 bg-stone-700 border border-amber-600/30 rounded-lg text-white focus:border-amber-400 focus:outline-none text-sm md:text-base">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-amber-200 mb-2 text-sm md:text-base">Personas</label>
+                    <select required class="w-full p-3 bg-stone-700 border border-amber-600/30 rounded-lg text-white focus:border-amber-400 focus:outline-none text-sm md:text-base">
+                        <option value="">Seleccionar...</option>
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3">3 personas</option>
+                        <option value="4">4 personas</option>
+                        <option value="5+">5+ personas</option>
+                    </select>
+                </div>
+                
+                <div class="flex gap-4 mt-6">
+                    <button type="button" onclick="closeReservationModal()" class="flex-1 py-3 bg-stone-600 hover:bg-stone-500 text-white rounded-lg transition-colors text-sm md:text-base">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="flex-1 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white rounded-lg transition-all text-sm md:text-base">
+                        Confirmar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Datos del menú con imágenes
+        const menuItems = [
+            {
+                name: "Espresso Supremo",
+                price: "$8",
+                description: "Granos selectos de Colombia, tostado artesanal con notas de chocolate y caramelo",
+                icon: "fas fa-coffee",
+                image: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&h=300&fit=crop&auto=format"
+            },
+            {
+                name: "Cappuccino Dorado",
+                price: "$12",
+                description: "Espuma de leche premium con polvo de oro comestible y arte latte exclusivo",
+                icon: "fas fa-mug-hot",
+                image: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=300&fit=crop&auto=format"
+            },
+            {
+                name: "Cold Brew Reserva",
+                price: "$15",
+                description: "Extracción en frío de 24 horas, granos etíopes con acidez brillante",
+                icon: "fas fa-glass-whiskey",
+                image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=300&fit=crop&auto=format"
+            },
+            {
+                name: "Macchiato Imperial",
+                price: "$14",
+                description: "Caramelo de vainilla Madagascar y crema batida con toque de canela",
+                icon: "fas fa-coffee",
+                image: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400&h=300&fit=crop&auto=format"
+            },
+            {
+                name: "Mocha Belga",
+                price: "$16",
+                description: "Chocolate belga 70% cacao y café de Jamaica Blue Mountain",
+                icon: "fas fa-mug-hot",
+                image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop&auto=format"
+            },
+            {
+                name: "Affogato Luxury",
+                price: "$18",
+                description: "Helado de vainilla bourbon con espresso doble y almendras tostadas",
+                icon: "fas fa-ice-cream",
+                image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&h=300&fit=crop&auto=format"
+            }
+        ];
+
+        // Imágenes para la galería
+        const galleryImages = [
+            {
+                url: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&h=400&fit=crop&auto=format",
+                title: "Granos Artesanales",
+                description: "Selección cuidadosa de los mejores granos del mundo"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&h=400&fit=crop&auto=format",
+                title: "Proceso de Tostado",
+                description: "Tostado perfecto para realzar cada sabor único"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop&auto=format",
+                title: "Arte Latte",
+                description: "Cada taza es una obra de arte creada por nuestros baristas"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&h=400&fit=crop&auto=format",
+                title: "Ambiente Exclusivo",
+                description: "Un espacio diseñado para la experiencia perfecta"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1497636577773-f1231844b336?w=600&h=400&fit=crop&auto=format",
+                title: "Preparación Experta",
+                description: "Técnicas tradicionales con equipos de vanguardia"
+            },
+            {
+                url: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format",
+                title: "Experiencia Sensorial",
+                description: "Cada sorbo es un viaje de sabores excepcionales"
+            }
+        ];
+
+        // Métodos de extracción
+        const extractionMethods = [
+            {
+                name: "V60",
+                time: "3-4 min",
+                temp: "92-96°C",
+                description: "Filtrado manual japonés para sabores limpios y brillantes",
+                icon: "fas fa-filter"
+            },
+            {
+                name: "Chemex",
+                time: "4-6 min",
+                temp: "93-96°C", 
+                description: "Extracción suave con filtros especiales de doble grosor",
+                icon: "fas fa-flask"
+            },
+            {
+                name: "French Press",
+                time: "4 min",
+                temp: "93°C",
+                description: "Inmersión completa para cuerpo intenso y aceites naturales",
+                icon: "fas fa-coffee"
+            },
+            {
+                name: "Aeropress",
+                time: "2-3 min",
+                temp: "85-92°C",
+                description: "Presión controlada para máxima extracción y versatilidad",
+                icon: "fas fa-compress"
+            }
+        ];
+
+        // Crear partículas de aroma
+        function createAromaParticles() {
+            const container = document.getElementById('aromaContainer');
+            
+            function createAromaParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'aroma-dot';
+                particle.style.left = Math.random() * 200 + 'px';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                particle.style.animationDuration = Math.random() * 3 + 4 + 's';
+                
+                container.appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 7000);
+            }
+            
+            // Crear partículas continuamente
+            setInterval(createAromaParticle, 800);
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', () => {
+            generateMenuItems();
+            generateGallery();
+            generateExtractionMethods();
+            createEnhancedCoffeeBeans();
+            createAromaParticles(); // Nueva función
+            updateTime();
+            setInterval(updateTime, 1000);
+            animateOnScroll();
+        });
+
+        // Generar items del menú con imágenes
+        function generateMenuItems() {
+            const menuGrid = document.getElementById('menuGrid');
+            
+            menuItems.forEach((item, index) => {
+                const menuCard = document.createElement('div');
+                menuCard.className = 'card-hover bg-gradient-to-br from-stone-800 to-stone-900 border border-amber-700/30 rounded-lg overflow-hidden transform transition-all duration-300';
+                menuCard.style.animationDelay = `${index * 0.1}s`;
+
+                menuCard.innerHTML = `
+                    <div class="relative h-48 md:h-56 overflow-hidden">
+                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover coffee-image">
+                        <div class="image-overlay"></div>
+                        <div class="absolute top-4 right-4 bg-black/70 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <span class="text-xl md:text-2xl font-bold text-coffee-gold">${item.price}</span>
+                        </div>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="${item.icon} text-xl md:text-2xl text-amber-400"></i>
+                            <h3 class="text-lg md:text-xl font-semibold text-amber-300">${item.name}</h3>
+                        </div>
+                        <p class="text-stone-300 leading-relaxed mb-4 text-sm md:text-base">${item.description}</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-1">
+                                ${Array(5).fill('<i class="fas fa-star text-amber-400 text-xs md:text-sm"></i>').join('')}
+                            </div>
+                            <button onclick="addToOrder('${item.name}')" class="bg-amber-600 hover:bg-amber-700 text-white px-3 md:px-4 py-2 rounded-full text-xs md:text-sm transition-colors">
+                                <i class="fas fa-plus mr-1"></i>Agregar
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                menuGrid.appendChild(menuCard);
+            });
+        }
+
+        // Generar galería de imágenes
+        function generateGallery() {
+            const galleryGrid = document.getElementById('galleryGrid');
+            
+            galleryImages.forEach((image, index) => {
+                const galleryCard = document.createElement('div');
+                galleryCard.className = 'card-hover bg-gradient-to-br from-stone-800 to-stone-900 border border-amber-700/30 rounded-lg overflow-hidden transform transition-all duration-300';
+                galleryCard.style.animationDelay = `${index * 0.15}s`;
+
+                galleryCard.innerHTML = `
+                    <div class="relative h-48 md:h-64 overflow-hidden">
+                        <img src="${image.url}" alt="${image.title}" class="w-full h-full object-cover coffee-image">
+                        <div class="image-overlay"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-lg md:text-xl font-semibold text-white mb-2">${image.title}</h3>
+                            <p class="text-stone-200 text-xs md:text-sm leading-relaxed">${image.description}</p>
+                        </div>
+                    </div>
+                `;
+
+                galleryGrid.appendChild(galleryCard);
+            });
+        }
+
+        // Generar métodos de extracción
+        function generateExtractionMethods() {
+            const extractionGrid = document.getElementById('extractionGrid');
+
+            extractionMethods.forEach((method, index) => {
+                const methodCard = document.createElement('div');
+                methodCard.className = 'card-hover bg-gradient-to-b from-amber-900/20 to-stone-900/50 border border-amber-600/30 rounded-lg p-4 md:p-6 text-center transform transition-all duration-300';
+                methodCard.style.animationDelay = `${index * 0.1}s`;
+
+                methodCard.innerHTML = `
+                    <div class="mb-4">
+                        <i class="${method.icon} text-3xl md:text-4xl text-amber-400 mb-3"></i>
+                        <h3 class="text-lg md:text-xl font-semibold text-amber-300">${method.name}</h3>
+                    </div>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center justify-center gap-2 text-stone-300 text-sm md:text-base">
+                            <i class="fas fa-clock text-xs md:text-sm"></i>
+                            <span>${method.time}</span>
+                        </div>
+                        <div class="flex items-center justify-center gap-2 text-stone-300 text-sm md:text-base">
+                            <i class="fas fa-thermometer-half text-xs md:text-sm"></i>
+                            <span>${method.temp}</span>
+                        </div>
+                    </div>
+                    <p class="text-stone-400 text-xs md:text-sm leading-relaxed">${method.description}</p>
+                `;
+
+                extractionGrid.appendChild(methodCard);
+            });
+        }
+
+        // Crear partículas de granos mejoradas
+        function createEnhancedCoffeeBeans() {
+            const container = document.getElementById('coffeeBeansContainer');
+
+            function createBean() {
+                const bean = document.createElement('div');
+                bean.className = 'bean';
+                bean.style.left = Math.random() * 100 + '%';
+                bean.style.animationDuration = Math.random() * 4 + 6 + 's';
+                bean.style.animationDelay = Math.random() * 3 + 's';
+                
+                // Variaciones en el tamaño
+                const scale = Math.random() * 0.6 + 0.7;
+                bean.style.transform = `scale(${scale})`;
+
+                container.appendChild(bean);
+
+                setTimeout(() => {
+                    if (bean.parentNode) {
+                        bean.parentNode.removeChild(bean);
+                    }
+                }, 10000);
+            }
+
+            // Crear granos con mayor frecuencia
+            setInterval(createBean, 1500);
+        }
+
+        // Actualizar hora
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('es-MX', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+
+            const timeElement = document.getElementById('currentTime');
+            if (timeElement) {
+                timeElement.textContent = `Abierto hasta 11:00 PM - ${timeString}`;
+            }
+        }
+
+        // Scroll suave
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Animaciones al scroll mejoradas
+        function animateOnScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.card-hover').forEach((el) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Modal functions
+        function openReservationModal() {
+            const modal = document.getElementById('reservationModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeReservationModal() {
+            const modal = document.getElementById('reservationModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+            document.getElementById('reservationForm').reset();
+        }
+
+        // Form submission
+        document.getElementById('reservationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Procesando...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                alert('¡Reservación confirmada! Te contactaremos pronto.');
+                closeReservationModal();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Add to order function
+        function addToOrder(itemName) {
+            const button = event.target;
+            const originalText = button.innerHTML;
+
+            button.innerHTML = '<i class="fas fa-check mr-1"></i>Agregado';
+            button.classList.add('bg-green-600');
+            button.classList.remove('bg-amber-600');
+
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('bg-green-600');
+                button.classList.add('bg-amber-600');
+            }, 1500);
+        }
+
+        // Close modal on outside click
+        document.getElementById('reservationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeReservationModal();
+            }
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating');
+
+            parallaxElements.forEach((element) => {
+                const speed = 0.3;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
